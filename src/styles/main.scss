@@ -1,0 +1,222 @@
+/* General Styles */
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body 
+{
+    background: #000;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+button
+{
+    border: 0;
+    background: none;
+    
+    &:hover 
+    {
+        cursor: pointer;
+    }
+    &:focus 
+    {
+        outline: none;
+    }
+}
+
+h1, h3,
+.hangman__word span
+{
+    font-family: 'Libre Baskerville', serif;
+}
+h1 
+{
+    color: #FFF;
+    font-size: 4rem;
+    letter-spacing: .25rem;
+}
+
+/* Canvas */
+#canvas 
+{
+    margin: 0 auto;
+}
+
+/* Hangman styles */
+.hangman 
+{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 10rem;
+
+    @media screen and (max-width: 1200px)
+    {
+        margin: 0 3rem;
+    }
+    
+    @media screen and (max-width: 600px) 
+    {
+        margin: 0 1rem;
+    }
+}
+
+.hangman__header
+{
+    display: flex;
+
+    .title,
+    .status
+    {
+        display: flex;
+    }
+
+    .status .score
+    {
+        border-right: 1px solid rgb(80, 80, 80  );
+    }
+
+    .status .score,
+    .status .guesses
+    {
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+
+    &.home--screen
+    {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    }
+
+    &.game--status
+    {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        margin: 2rem;
+        color: #FFF;
+    }
+
+    h1 
+    {
+        margin-bottom: 40px;
+    }
+
+    .btn-new-game 
+    {
+        position: relative;
+        background: #00cc99;
+        box-shadow: 0px 4px 0px #004d39;
+        border-radius: 20px;
+        padding: 10px 30px; 
+        font-size: 14px;
+        color: #000;
+        
+        &:active 
+        {
+            position: relative;
+            box-shadow: 0px 0px 0px #004d39;
+            top: 4px;
+        }
+
+    }
+}
+
+.hangman__word
+{   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.hangman__word span 
+{
+    color: #FFF;
+    padding: 0 0.5rem;
+    font-size: 3rem;
+
+    @media screen and (max-width: 600px)
+    {
+        font-size: 2rem;
+        padding: 0 .25rem;
+    }
+}
+
+.hangman__word .red 
+{
+    color: red;
+}
+.hangman__word .green 
+{
+    color: #66d196;
+}
+
+.hangman__buttons 
+{
+    max-width: 600px;
+    text-align: center;
+    align-self: center;
+
+    @media screen and (max-width: 600px) 
+    {
+        width: 100%;
+    }
+
+    .btn-replay
+    {
+        color: #FFF;
+        font-size: 11px;
+        border: 1px solid #FFF;
+        padding: 10px 30px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: .25s;
+
+        &:hover 
+        {
+            background: #FFF;
+            color: #000;
+        }
+    }
+
+    .btn
+    {
+        background: #ffa500;
+        width: 50px;
+        height: 50px;
+        margin: 2px;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        transition: .25s;
+
+        @media screen and (max-width: 700px)
+        {
+            font-size: 1.25rem;
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover 
+        {
+            background: #ffa600c5;
+        }
+        
+    }
+}

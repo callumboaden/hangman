@@ -1,0 +1,249 @@
+/* General Styles */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+button {
+  border: 0;
+  background: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+h1, h3,
+.hangman__word span {
+  font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 4rem;
+  letter-spacing: .25rem;
+}
+
+/* Canvas */
+#canvas {
+  margin: 0 auto;
+}
+
+/* Hangman styles */
+.hangman {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 10rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .hangman {
+    margin: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hangman {
+    margin: 0 1rem;
+  }
+}
+
+.hangman__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hangman__header .title,
+.hangman__header .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hangman__header .status .score {
+  border-right: 1px solid #505050;
+}
+
+.hangman__header .status .score,
+.hangman__header .status .guesses {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.hangman__header.home--screen {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.hangman__header.game--status {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2rem;
+  color: #FFF;
+}
+
+.hangman__header h1 {
+  margin-bottom: 40px;
+}
+
+.hangman__header .btn-new-game {
+  position: relative;
+  background: #00cc99;
+  -webkit-box-shadow: 0px 4px 0px #004d39;
+          box-shadow: 0px 4px 0px #004d39;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 14px;
+  color: #000;
+}
+
+.hangman__header .btn-new-game:active {
+  position: relative;
+  -webkit-box-shadow: 0px 0px 0px #004d39;
+          box-shadow: 0px 0px 0px #004d39;
+  top: 4px;
+}
+
+.hangman__word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.hangman__word span {
+  color: #FFF;
+  padding: 0 0.5rem;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .hangman__word span {
+    font-size: 2rem;
+    padding: 0 .25rem;
+  }
+}
+
+.hangman__word .red {
+  color: red;
+}
+
+.hangman__word .green {
+  color: #66d196;
+}
+
+.hangman__buttons {
+  max-width: 600px;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+  .hangman__buttons {
+    width: 100%;
+  }
+}
+
+.hangman__buttons .btn-replay {
+  color: #FFF;
+  font-size: 11px;
+  border: 1px solid #FFF;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.hangman__buttons .btn-replay:hover {
+  background: #FFF;
+  color: #000;
+}
+
+.hangman__buttons .btn {
+  background: #ffa500;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+@media screen and (max-width: 700px) {
+  .hangman__buttons .btn {
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hangman__buttons .btn:hover {
+  background: #ffa600c5;
+}
+/*# sourceMappingURL=main.css.map */
