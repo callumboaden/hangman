@@ -194,6 +194,15 @@ h1 {
   color: #66d196;
 }
 
+.hangman__status {
+  text-align: center;
+  color: #FFF;
+}
+
+.hangman__status .score {
+  margin-bottom: 20px;
+}
+
 .hangman__buttons {
   max-width: 600px;
   text-align: center;

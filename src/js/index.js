@@ -1,10 +1,12 @@
 /* HANGMAN GAME */
+import dotenv from 'dotenv';
 
 import Game from './models/Game';
 import { elements } from './views/base';
 import * as hangmanView from './views/hangmanView';
 import * as gameView from './views/gameView';
 import './../styles/main.css';
+
 
 //get the canvas context
 let ctx = elements.canvas.getContext('2d');
@@ -51,7 +53,10 @@ elements.buttons.addEventListener('click', e => {
                 state.game.isCorrect()
             );
             
-            gameView.gameOver(state.game.score);
+            gameView.gameOver(
+                state.game.score,
+                state.game.definition
+            );
 
         } 
         
@@ -72,6 +77,8 @@ elements.buttons.addEventListener('click', e => {
     if (e.target.matches('.btn-replay')) {
 
         state.game.reset();
+
+        state.game.getDefinition();
 
         gameView.clearAll();
     

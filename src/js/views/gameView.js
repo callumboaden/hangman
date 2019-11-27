@@ -65,9 +65,10 @@ export const renderHeader = (score, guesses, totalGuesses) => {
     elements.header.insertAdjacentHTML('beforeend', markup);
 }
 
-export const gameOver = (score) => {
+export const gameOver = (score, definition) => {
     elements.gameStatus.innerHTML = `
         <p class="score">Score: ${score}</p>
+        <p class="definition"><em>${definition}</em></p>
     `;
 
     elements.buttons.innerHTML = `
@@ -89,4 +90,5 @@ export const clearAll = () => {
     clearButtons();
     clearHeader();
     clearWordDisplay();
+    clearGameStatus();
 }

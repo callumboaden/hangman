@@ -10,6 +10,9 @@ module.exports = {
     devServer: {
         contentBase: './dist'
     },
+    node: {
+        fs: 'empty'
+    },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
